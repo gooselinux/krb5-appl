@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/kerberos/bin/rsh -x "$@"

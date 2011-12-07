@@ -1,0 +1,12 @@
+# default: off
+# description: The kerberized rlogin server accepts BSD-style rlogin sessions, \
+#              but uses Kerberos 5 authentication.
+service klogin
+{
+	flags		= REUSE
+	socket_type	= stream        
+	wait		= no
+	user		= root
+	server		= /usr/kerberos/sbin/klogind
+	disable		= yes
+}

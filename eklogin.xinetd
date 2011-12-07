@@ -1,0 +1,13 @@
+# default: off
+# description: The encrypting kerberized rlogin server accepts rlogin sessions \
+#              authenticated and encrypted with Kerberos 5.
+service eklogin
+{
+	flags		= REUSE
+	socket_type	= stream        
+	wait		= no
+	user		= root
+	server		= /usr/kerberos/sbin/klogind
+	server_args	= -e
+	disable		= yes
+}

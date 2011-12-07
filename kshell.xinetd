@@ -1,0 +1,13 @@
+# default: off
+# description: The kerberized rshell server accepts rshell commands \
+#              authenticated and encrypted with Kerberos 5.
+service kshell
+{
+	flags		= REUSE
+	socket_type	= stream        
+	wait		= no
+	user		= root
+	server		= /usr/kerberos/sbin/kshd
+	server_args	= -e
+	disable		= yes
+}

@@ -1,0 +1,14 @@
+# default: off
+# description: The kerberized FTP server accepts FTP connections \
+#              that can be authenticated with Kerberos 5.
+service ftp
+{
+	flags		= REUSE
+	socket_type	= stream        
+	wait		= no
+	user		= root
+	server		= /usr/kerberos/sbin/ftpd
+	server_args	= -l -a
+	log_on_failure	+= USERID
+	disable		= yes
+}

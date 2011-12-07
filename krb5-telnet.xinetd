@@ -1,0 +1,13 @@
+# default: off
+# description: The kerberized telnet server accepts normal telnet sessions, \
+#              but can also use Kerberos 5 authentication.
+service telnet
+{
+	flags		= REUSE
+	socket_type	= stream        
+	wait		= no
+	user		= root
+	server		= /usr/kerberos/sbin/telnetd
+	log_on_failure	+= USERID
+	disable		= yes
+}
